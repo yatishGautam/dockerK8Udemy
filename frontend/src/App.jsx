@@ -8,7 +8,7 @@ function App() {
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		const formData = { title, details };
-		const response = await fetch("http://localhost:5000/submit-feedback", {
+		const response = await fetch("http://localhost:5001/submit-feedback", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(formData),
