@@ -12,7 +12,9 @@ app.use(cors());
 app.use(bodyparser.json());
 
 app.get("/", (req, res) => {
-	res.status(200).json({ message: "hello from the other side" });
+	const filepath = path.join(__dirname, "dist", "index.html");
+	res.sendFile(filepath);
+	// res.status(200).json({ message: "hello from the other side" });
 });
 
 app.post("/submit-feedback", (req, res, next) => {
