@@ -11,7 +11,9 @@ const port = 5001;
 app.use(cors());
 app.use(bodyparser.json());
 
-app.get("/", (req, res) => {
+app.use(express.static(path.join(__dirname, "dist")));
+
+app.get("*", (req, res) => {
 	const filepath = path.join(__dirname, "dist", "index.html");
 	res.sendFile(filepath);
 	// res.status(200).json({ message: "hello from the other side" });
